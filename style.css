@@ -1,0 +1,587 @@
+/* Reset básico para garantir consistência entre navegadores */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Fonte do site */
+    background-color: #fff; /* Cor de fundo */
+    color: #333; /* Cor padrão dos textos */
+}
+
+.header {
+    padding: 10px 20px; /* Espaçamento interno do header */
+    background-color: #f0e8d8; /* Cor de fundo do header */
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(160,190,206,0.1) 2px,
+        rgba(160,190,206,0.1) 4px
+    );
+    background-size: cover; /* Faz a imagem de fundo cobrir toda a área do header */
+    background-position: center; /* Centraliza a imagem de fundo */
+    border-bottom: 1px solid #c5d5; /* Borda inferior para dar um acabamento mais definido ao header */
+}
+
+.nav-content {
+    display: flex; /* Exibe os itens do nav em linha */
+    justify-content: space-between; /* Espaça os itens para as extremidades */
+    align-items: center; /* Alinha os itens verticalmente */
+    flex-wrap: nowrap; /* Impede que os itens quebrem para a próxima linha */
+    margin: 0; /* Remove a margem padrão do nav */
+    padding: 0; /* Remove o padding padrão do nav */
+}
+
+.nav-links{
+    display: flex; /* Exibe os links em linha */
+    flex-direction: row; /* Exibe os links em linha */
+    gap: 20px; /* Espaçamento entre os links */
+}
+
+.nav-link {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: #2d4462; /* Cor dos links */
+    font-weight: bold; /* Deixa os links em negrito */
+    padding: 8px 16px; /* Espaçamento interno dos links */
+    border-radius: 999px; /* Deixa os links com bordas arredondadas */
+    transition: all 0.3s; /* Transição suave para as mudanças de estilo dos links */;
+}
+
+
+.nav-link:hover {
+    color: white; /* Cor dos links ao passar o mouse */
+    background-color: #4a7c6f; /* Cor de fundo dos links ao passar o mouse */
+}
+
+.nav-link.active {
+    color: white; /* Cor do link ativo */
+    background-color: #4a7c6f; /* Cor de fundo do link ativo */
+}
+
+.hero {
+    height: 100vh; /* Altura total da tela */
+    min-height: 500px;
+    display: flex; /* Exibe os itens em linha */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column; /* Exibe os itens em coluna */
+    background-image: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url(fundo_hero.jpg); /* Imagem de fundo do hero */
+    background-size: cover; /* Faz a imagem de fundo cobrir toda a área do hero */
+    background-position: center; /* Centraliza a imagem de fundo */
+    color: white; /* Cor do texto do hero */
+}
+
+.hero h1 {
+    font-size: 2.5rem; /* Tamanho do título */
+    text-align: center; /* Centraliza o texto do título */
+    animation: fadeIn 1.5s ease; /* Animação de fade-in para o título */
+}
+
+.hero p {
+    margin-top: 16px; /* Espaçamento acima do parágrafo */
+    font-size: 1.1rem; /* Tamanho do parágrafo */;
+    text-align: center; /* Centraliza o texto do parágrafo */
+    animation: fadeIn 2s ease; /* Animação de fade-in para o parágrafo */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; transform: translateY(30px); /* Inicia com opacidade 0 e deslocamento para baixo */
+    }
+    to {
+        opacity: 1; transform: translateY(0); /* Termina com opacidade 1 e posição original */
+    }
+}
+
+
+.produtos {
+    padding: 80px 20px; /* Espaçamento interno */
+}
+
+.produtos h2 {
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 40px; /* Espaçamento abaixo do título */
+}
+
+.container-blusas {
+    display: flex; /* Exibe os itens em linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 30px; /* Espaçamento entre os itens */
+}
+
+.blusa{
+    width: 300px; /* Largura fixa para cada blusa */
+    position: relative; /* Permite posicionar a badge de inverno dentro do container da blusa */
+}
+
+.blusa img {
+    width: 100%; /* A imagem ocupa toda a largura do container */
+    height: 380px; /* Altura fixa para as imagens das blusas */
+    object-fit: cover; /* Garante que a imagem cubra toda a área do container sem distorcer */
+    object-position: center top; /* Ajusta a posição da imagem para destacar a parte superior, onde geralmente estão os detalhes do produto */
+}
+
+.footer {
+    padding: 20px; /* Espaçamento interno */
+    background-color: #111; /* Cor de fundo do rodapé */
+    color: white; /* Cor do texto do rodapé */
+    text-align: center; /* Centraliza o texto do rodapé */
+}
+
+@media (max-width: 768px){
+    .nav-content {
+        flex-direction: column; /* Exibe os itens em coluna */
+    }
+
+    .container-blusas {
+        flex-direction: column; /* Exibe os itens em coluna */
+        align-items: center; /* Centraliza os itens verticalmente */;
+    }
+
+    .hero h1{
+        font-size: 1.3rem; /* Tamanho do título para telas menores */;
+        text-align: center; /* Centraliza o texto do título para telas menores */;
+        padding: 0 16px;
+        word-break: keep-all;
+    }
+}
+
+.logo-img {
+    width: 180px; /* Largura da logo */
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 100%; /* Garante que a logo não ultrapasse a largura do container */;
+}
+
+.search-bar {
+    display: flex;/* Exibe os itens em linha */
+    align-items: center; /* Alinha os itens verticalmente */
+    border: 1px solid #a0bece; /* Borda da barra de pesquisa */
+    border-radius: 999px; /* Deixa a barra de pesquisa com bordas arredondadas */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites da barra de pesquisa */
+    background: #f7f3ee; /* Cor de fundo da barra de pesquisa */
+    position: relative; /* Permite posicionar o botão de pesquisa dentro da barra */
+    left: 20%; /* Move a barra de pesquisa para o centro horizontalmente */
+}
+
+.search-input {
+    border: none; /* Remove a borda do input */
+    background: transparent; /* Deixa o fundo do input transparente */;
+    padding: 8px 16px; /* Espaçamento interno do input */
+    font-size: 14px; /* Tamanho da fonte do input */
+    outline: none; /* Remove o contorno do input ao focar */
+    width: 260px; /* Largura do input */
+    color:#3a5a74; /* Cor do texto do input */
+}
+
+.search-input::placeholder {
+    color: #a0bece; /* Cor do texto de placeholder */
+}
+
+.search-btn:hover {
+    background: #e8f0f5; /* Cor de fundo do botão ao passar o mouse */
+}
+
+@media (max-width: 768px){
+    .search-bar {
+        width: 100%; /* A barra de pesquisa ocupa toda a largura do container em telas menores */
+        margin: 10px 0; /* Espaçamento vertical para a barra de pesquisa em telas menores */
+    }
+
+    .search-input {
+        width: 100%; /* O input ocupa toda a largura da barra de pesquisa em telas menores */
+    }
+}
+
+.btn-whatsapp {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 24px; /* Distância do botão em relação à parte inferior da tela */
+    right: 24px; /* Distância do botão em relação à parte direita da tela */
+    width: 58px; /* Largura do botão */
+    height: 58px; /* Altura do botão */
+    border-radius: 50%; /* Deixa o botão com formato circular */
+    background-color: #25d366; /* Cor de fundo do botão (cor do WhatsApp) */
+    display: flex; /* Exibe os itens em linha */
+    align-items: center; /* Alinha os itens verticalmente */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra para dar um efeito de elevação */
+    z-index: 999; /* Garante que o botão fique acima de outros elementos da página */
+    transition: transform 0.3s; /* Transição suave para o efeito de hover */
+    font-size: 28px; /* Tamanho da fonte do ícone do WhatsApp */
+    text-decoration: none; /* Remove sublinhado do link */
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do botão ao passar o mouse */
+}
+
+.btn-whatsapp img {
+    width: 34px; /* Largura do ícone do WhatsApp dentro do botão */
+    height: 34px; /* Altura do ícone do WhatsApp dentro do botão */
+    filter: brightness(0) invert(1); /* Deixa o ícone branco para melhor contraste com o fundo verde do botão */
+}
+
+.balao-whatsapp {
+    position: absolute; /* Posiciona o balão em relação ao botão de WhatsApp */
+    bottom: 68px; /* Distância do balão em relação à parte inferior do botão de WhatsApp */
+    right: 0; /* Alinha o balão à direita do botão de WhatsApp */
+    background-color: white; /* Cor de fundo do balão */
+    color: #2d4462; /* Cor do texto do balão */
+    font-size: 13px; /* Tamanho da fonte do texto do balão */
+    font-weight: bold; /* Deixa o texto do balão em negrito */
+    font-family: Arial, sans-serif; /* Fonte do texto do balão */
+    padding: 8px 14px; /* Espaçamento interno do balão */
+    border-radius: 20px; /* Deixa o balão com bordas arredondadas */
+    white-space: nowrap; /* Impede que o texto do balão quebre em várias linhas */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Sombra para dar um efeito de elevação ao balão */
+    border: 1px solid #e0e0e0; /* Borda do balão para dar um acabamento mais definido */
+}
+
+.balao-whatsapp::after {
+    content: ""; /* Conteúdo vazio para criar a seta do balão */
+    position: absolute; /* Posiciona a seta em relação ao balão */
+    bottom: -8px; /* Distância da seta em relação à parte inferior do balão */
+    right: 18px; /* Alinha a seta à direita do balão */
+    border-width: 8px 8px 0 8px; /* Define a largura e altura da seta */
+    border-style: solid; /* Define o estilo da borda da seta */
+    border-color: white transparent transparent transparent; /* Define as cores da borda da seta para criar o efeito de triângulo */;
+}
+
+.btn-hero {
+    margin-top: 30px; /* Espaçamento acima do botão */
+    padding: 14px 36px; /* Espaçamento interno do botão */
+    background-color: transparent; /* Fundo transparente para o botão */
+    border: 2px solid white; /* Borda branca para o botão */
+    color: white; /* Cor do texto do botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    border-radius: 999px; /* Deixa o botão com bordas arredondadas */
+    transition: all 0.3s; /* Transição suave para as mudanças de estilo do botão */
+    text-decoration: none; /* Remove sublinhado do link do botão */
+}
+
+.btn-hero:hover {
+    background-color: white; /* Cor de fundo do botão ao passar o mouse */
+    color: #2d4462; /* Cor do texto do botão ao passar o mouse */
+}
+
+.produtos-subtitulo {
+    text-align: center; /* Centraliza o subtítulo da seção de produtos */
+    color: #5a7d94; /* Cor do subtítulo da seção de produtos */
+    font-size: 1rem; /* Tamanho do subtítulo da seção de produtos */
+    margin-bottom: 40px; /* Espaçamento abaixo do subtítulo da seção de produtos */
+}
+
+.btn-ver-todos {
+    display: block; /* Exibe o botão como um bloco para ocupar toda a largura disponível */
+    text-align: center; /* Centraliza o texto do botão de ver todos */
+    margin: 40px auto 0; /* Centraliza o botão de ver todos horizontalmente e adiciona espaçamento acima */
+    width: fit-content; /* O botão ocupa apenas a largura necessária para o texto */
+    padding: 12px 32px; /* Espaçamento interno do botão de ver todos */
+    border: 2px solid #2d4462; /* Borda do botão de ver todos */
+    border-radius: 999px; /* Deixa o botão de ver todos com bordas arredondadas */
+    color: #2d4462; /* Cor do texto do botão de ver todos */
+    text-decoration: none; /* Remove sublinhado do link do botão de ver todos */
+    font-weight: bold; /* Deixa o texto do botão de ver todos em negrito */
+    transition: all 0.3s; /* Transição suave para as mudanças de estilo do botão de ver todos */
+}
+
+.badge-inverno {
+    position: absolute; /* Permite posicionar a badge em relação ao card */
+    top: 12px; /* Distância da badge em relação à parte superior do card */
+    left: 12px; /* Distância da badge em relação à parte esquerda do card */
+    background-color: #4a7c6f; /* Cor de fundo da badge de inverno */
+    color: white; /* Cor do texto da badge de inverno */
+    padding: 4px 12px; /* Espaçamento interno da badge de inverno */
+    border-radius: 999px; /* Deixa a badge de inverno com bordas arredondadas */
+    font-size: 12px; /* Tamanho da fonte da badge de inverno */
+    font-weight: bold; /* Deixa o texto da badge de inverno em negrito */
+    z-index: 10; /* Garante que a badge de inverno fique acima de outros elementos do card */
+}
+
+.sobre-hero {
+    background-color: #f0e8d8; /* Cor de fundo da seção sobre o hero */
+    text-align: center; /* Centraliza o texto da seção sobre o hero */
+    padding: 40px 20px 30px; /* Espaçamento interno da seção sobre o hero */
+    color: #2d4462; /* Cor do texto da seção sobre o hero */
+}
+
+.sobre-hero h1 {
+    font-size: 2.5rem; /* Tamanho do título da seção sobre o hero */
+    margin-bottom: 10px; /* Espaçamento abaixo do título da seção sobre o hero */
+}
+
+.sobre-hero p {
+    font-size: 1.1rem;
+    color:#5a7d94; /* Cor do texto do parágrafo da seção sobre o hero */
+}
+
+.sobre-conteudo {
+    max-width: 800px; /* Largura máxima do conteúdo da seção sobre o hero */;
+    margin: 60px auto; /* Centraliza o conteúdo da seção sobre o hero */
+    padding: 0 20px; /* Espaçamento horizontal para o conteúdo da seção sobre o hero */
+}
+
+.sobre-texto h2 {
+    font-size: 1.5rem; /* Tamanho do subtítulo da seção sobre o hero */
+    color: #2d4462; /* Cor do subtítulo da seção sobre o hero */
+    margin: 40px 0 12px; /* Espaçamento acima e abaixo do subtítulo da seção sobre o hero */
+}
+
+.sobre-texto p {
+    color: #555; /* Cor do texto do parágrafo da seção sobre o hero */
+    line-height: 1.8; /* Altura da linha para melhorar a legibilidade do texto do parágrafo da seção sobre o hero */
+    font-size: 1rem; /* Tamanho da fonte do parágrafo da seção sobre o hero */;
+}
+
+.sobre-valores {
+    list-style: none; /* Remove os marcadores da lista de valores */
+    margin-top: 12px; /* Espaçamento acima da lista de valores */
+    display: flex; /* Exibe os itens da lista de valores em linha */
+    flex-direction: column; /* Exibe os itens da lista de valores em coluna */
+    gap: 10px; /* Espaçamento entre os itens da lista de valores */;
+}
+
+.sobre-valores li {
+    font-size: 1rem; /* Tamanho da fonte dos itens da lista de valores */
+    color: #555; /* Cor dos itens da lista de valores */
+    line-height: 1.6; /* Altura da linha para melhorar a legibilidade dos itens da lista de valores */;
+}
+
+.sobre-horario {
+    list-style: none; /* Remove os marcadores da lista de horário */
+    margin-top: 12px; /* Espaçamento acima da lista de horário */
+    display: flex; /* Exibe os itens da lista de horário em linha */
+    flex-direction: column; /* Exibe os itens da lista de horário em coluna */
+    gap: 10px; /* Espaçamento entre os itens da lista de horário */
+}
+
+.sobre-horario li {
+    font-size: 1rem; /* Tamanho da fonte dos itens da lista de horário */
+    color: #555; /* Cor dos itens da lista de horário */
+    line-height: 1.6; /* Altura da linha para melhorar a legibilidade dos itens da lista de horário */
+}
+
+.galeria-hero {
+    background-color: #f0e8d8; /* Cor de fundo da seção hero da galeria */
+    text-align: center; /* Centraliza o texto da seção hero da galeria */
+    padding: 60px 20px 40px; /* Espaçamento interno da seção hero da galeria */
+    color: #2d4462; /* Cor do texto da seção hero da galeria */
+    margin-top: 0; /* Remove a margem superior da seção hero da galeria para evitar espaçamento extra */
+}
+
+.galeria-hero h1 {
+    font-size: 2.5rem; /* Tamanho do título da seção hero da galeria */
+    margin-bottom: 10px; /* Espaçamento abaixo do título da seção hero da galeria */
+}
+
+.galeria-hero p {
+    font-size: 1.1rem; /* Tamanho do parágrafo da seção hero da galeria */
+    color:#5a7d94; /* Cor do texto do parágrafo da seção hero da galeria */
+}
+
+.galeria-secao {
+    padding: 60px 80px; /* Espaçamento interno da seção da galeria */;
+}
+
+.galeria-grid {
+    display: grid; /* Exibe os itens em um grid */
+    grid-template-columns: repeat(3, 1fr); /* Define 3 colunas de largura igual para o grid */
+    gap: 30px; /* Espaçamento entre os itens do grid */
+    max-width: 1100px; /* Largura máxima do grid da galeria */
+    margin: 0 auto; /* Centraliza o grid da galeria */
+}
+
+.card {
+    border-radius: 12px; /* Deixa os cards com bordas arredondadas */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites dos cards */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra para dar um efeito de elevação aos cards */
+    transition: transform 0.3s; /* Transição suave para o efeito de hover dos cards */
+    background: white; /* Cor de fundo dos cards */
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card img {
+    width: 100%; /* A imagem ocupa toda a largura do card */
+    height: 420px; /* Altura fixa para as imagens dos cards */
+    object-fit: cover; /* Garante que a imagem cubra toda a área do card sem distorcer */
+    object-position: center top; /* Ajusta a posição da imagem para destacar o centro, onde geralmente estão os detalhes do produto */
+}
+
+.card-info {
+    padding: 16px; /* Espaçamento interno da seção de informações dos cards */
+}
+
+.card a {
+    text-decoration: none; 
+    display: block;
+}
+
+.card-info h3 {
+    font-size: 1rem; /* Tamanho do título dos cards */
+    font-weight: bold; /* Deixa o título dos cards em negrito */
+    color: #2d4462; /* Cor do título dos cards */
+    margin-bottom: 6px; /* Espaçamento abaixo do título dos cards */;
+}
+
+.card-info p {
+    font-size: 0.85rem; /* Tamanho do parágrafo dos cards */
+    font-weight: normal; /* Deixa o texto dos cards em negrito */
+    color: #777; /* Cor do texto dos cards */
+    line-height: 1.5; /* Altura da linha para melhorar a legibilidade do texto dos cards */
+}
+
+@media (max-width: 768px){
+    .galeria-grid {
+        grid-template-columns: 1fr; /* O grid da galeria exibe apenas 1 coluna em telas menores */
+    }
+}
+
+.contato-hero {
+    background-color: #f0e8d8; /* Cor de fundo da seção hero de contato */
+    text-align: center; /* Centraliza o texto da seção hero de contato */
+    padding: 60px 20px 40px; /* Espaçamento interno da seção hero de contato */
+    color: #2d4462; /* Cor do texto da seção hero de contato */
+}
+
+.contato-hero h1 {
+    font-size: 2.5rem; /* Tamanho do título da seção hero de contato */
+    margin-bottom: 10px; /* Espaçamento abaixo do título da seção hero de contato */
+}
+
+.contato-hero p {
+    font-size: 1.1rem; /* Tamanho do parágrafo da seção hero de contato */
+    color: #5a7d94; /* Cor do texto do parágrafo da seção hero de contato */
+}
+
+.contato-secao {
+    padding: 60px 40px; /* Espaçamento interno da seção de contato */
+    max-width: 1100px; /* Largura máxima da seção de contato */
+    margin: 0 auto; /* Centraliza a seção de contato */
+}
+
+.contato-grid {
+    display: grid; /* Exibe os itens em um grid */
+    grid-template-columns: 1fr 1fr ; /* Define 2 colunas para o grid de contato */
+    gap: 60px; /* Espaçamento entre os itens do grid de contato */
+}
+
+.contato-info h2,
+.contato-form h2 {
+    font-size: 1.5rem; /* Tamanho do título das seções de contato */
+    color:#2d4462; /* Cor do título das seções de contato */
+    margin-bottom: 24px; /* Espaçamento abaixo do título das seções de contato */
+}
+
+.contato-item {
+    display: flex; /* Exibe os itens de contato em linha */
+    align-items: flex-start; /* Alinha os itens de contato ao topo */
+    gap: 12px; /* Espaçamento entre os itens de contato */
+    margin-bottom: 20px; /* Espaçamento abaixo de cada item de contato */
+}
+
+.contato-item span {
+    font-size: 1.3rem; /* Tamanho do ícone dos itens de contato */
+}
+
+.contato-item p {
+    color: #555; /* Cor do texto dos itens de contato */
+    font-size: 1rem; /* Tamanho da fonte dos itens de contato */
+    line-height: 1.6; /* Altura da linha para melhorar a legibilidade dos itens de contato */
+}
+
+@media (max-width: 768px){
+    .contato-grid {
+        grid-template-columns: 1fr; /* O grid de contato exibe apenas 1 coluna em telas menores */
+    }
+}
+
+.faixa-inverno {
+    background-color: #2d4462; /* Cor de fundo da faixa de inverno */
+    color: white; /* Cor do texto da faixa de inverno */
+    text-align: center; /* Centraliza o texto da faixa de inverno */
+    padding: 12px; /* Espaçamento interno da faixa de inverno */
+    font-size: 14px; /* Tamanho da fonte da faixa de inverno */
+    font-weight: bold; /* Deixa o texto da faixa de inverno em negrito */
+    letter-spacing: 1px; /* Espaçamento entre as letras da faixa de inverno */
+}
+
+.faixa-atacado {
+    background-color: #4a7c6f; /* Cor de fundo da faixa de atacado */
+    color: white; /* Cor do texto da faixa de atacado */
+    text-align: center; /* Centraliza o texto da faixa de atacado */
+    padding: 10px; /* Espaçamento interno da faixa de atacado */
+    font-size: 14px; /* Tamanho da fonte da faixa de atacado */
+}
+
+@keyframes pulsar {
+    0% {transform: scale(1); } /* Inicia com o tamanho original do botão */
+    50% {transform: scale(1.15); } /* Aumenta o tamanho do botão para 115% no meio da animação */
+    100% {transform: scale(1); } /* Retorna ao tamanho original do botão no final da animação */
+}
+
+.btn-whatsapp {
+    animation: pulsar 2s infinite; /* Aplica a animação de pulsar ao botão de WhatsApp, com duração de 2 segundos e repetição infinita */
+}
+
+.btn-whatsapp:hover {
+    animation: none; /* Remove a animação de pulsar ao passar o mouse sobre o botão de WhatsApp para evitar conflito com o efeito de hover */
+    transform: scale(1.1); /* Aumenta o tamanho do botão de WhatsApp para 110% ao passar o mouse */
+}
+
+.assinatura {
+    font-size: 12px; /* Tamanho da fonte da assinatura no rodapé */
+    color: #888; /* Cor da assinatura no rodapé */
+    margin-top: 8px; /* Espaçamento acima da assinatura no rodapé */
+}
+
+.assinatura a {
+    color: #8fa8bc; /* Cor do link da assinatura no rodapé */
+    text-decoration: none; /* Remove sublinhado do link da assinatura no rodapé */
+}
+
+.assinatura a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao link da assinatura no rodapé ao passar o mouse */
+}
+
+.contato-whatsapp-cta {
+    text-align: center;
+    padding: 40px;
+    background-color: #faf7f2;
+    border-radius: 12px;
+}
+
+.contato-whatsapp-cta h2 {
+    color: #2d4462;
+    margin-bottom: 12px;
+}
+
+.contato-whatsapp-cta p {
+    color: #777;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.btn-whatsapp-cta {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.3s;
+}
+
+.btn-whatsapp-cta:hover {
+    transform: scale(1.05);
+}
