@@ -72,7 +72,7 @@ body {
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     ),
-    url(fundo_hero.jpg); /* Imagem de fundo do hero */
+    url(fundo-hero.jpg); /* Imagem de fundo do hero */
     background-size: cover; /* Faz a imagem de fundo cobrir toda a área do hero */
     background-position: center; /* Centraliza a imagem de fundo */
     color: white; /* Cor do texto do hero */
